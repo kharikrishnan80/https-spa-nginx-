@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTTPS SPA (Self-signed)</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 40px; }
+    .card { padding: 16px; border: 1px solid #ddd; border-radius: 12px; max-width: 620px; }
+    input, button { padding: 10px; border-radius: 10px; border: 1px solid #ccc; }
+    button { cursor: pointer; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✅ HTTPS is working (self-signed)</h1>
+    <p>This page is served by <code>nginx</code> in Docker with a self-signed certificate.</p>
+
+    <p id="msg">Type something and click.</p>
+    <input id="txt" placeholder="Hello..." />
+    <button onclick="go()">Update</button>
+  </div>
+
+  <script>
+    function go() {
+      const v = document.getElementById('txt').value || '(empty)';
+      document.getElementById('msg').innerText = 'You typed: ' + v;
+    }
+  </script>
+</body>
+</html>
